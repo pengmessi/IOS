@@ -20,7 +20,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
-        recordingLable.hidden = true
+        recordingLable.text = "Tap to Record"
+        recordingLable.hidden = false
         microphoneButton.enabled = true
     }
 
@@ -44,20 +45,16 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func touchMicrophoneButton(sender: UIButton) {
-        recordingLable.hidden = false
+        recordingLable.text = "recording in progress"
         stopButton.hidden = false
         microphoneButton.enabled = false
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
-        //let currentDateTime = NSDate()
-        //let formatter = NSDateFormatter()
-        //formatter.dateFormat = "ddMMyyyy-HHmmss"
-        //let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
         let recordingName = "my_audio.wav"
         
         let pathArray = [dirPath, recordingName]
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        //println(filePath)
+        
         var session = AVAudioSession.sharedInstance()
         session.setCategory(AVAudioSessionCategoryPlayAndRecord, error: nil)
         audioRecorder = AVAudioRecorder(URL: filePath, settings: nil, error: nil)
@@ -70,9 +67,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder!, successfully flag: Bool) {
             if (flag) {
                 //1. save audio
-                recordedAudio = RecordedAudio()
-                recordedAudio.filePathUrl = recorder.url
-                recordedAudio.title = recorder.url.lastPathComponent
+                let recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent)
                 //2. perform segue
                 self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
             }
