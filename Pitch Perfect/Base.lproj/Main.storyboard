@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y4B-Bo-I7U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -42,7 +43,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QOF-Fw-6en" firstAttribute="top" secondItem="nqi-oc-XC2" secondAttribute="bottom" constant="15" id="1Z2-ZE-zZh"/>
                             <constraint firstItem="nqi-oc-XC2" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="146" id="8zI-rY-s0F"/>
@@ -120,15 +121,16 @@
             </objects>
             <point key="canvasLocation" x="1488" y="337"/>
         </scene>
-        <!--Play Sounds View Controller-->
+        <!--Audio Effects-->
         <scene sceneID="ziT-q3-xl8">
             <objects>
-                <viewController id="qtg-fn-lhn" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Audio Effects" id="qtg-fn-lhn" customClass="PlaySoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="V7f-Ol-ASE"/>
                         <viewControllerLayoutGuide type="bottom" id="Osh-Og-xDc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eXT-Uj-p4z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqR-be-bXL">
@@ -203,16 +205,16 @@
                                 <exclude reference="PVX-Vb-PiC"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="9Hy-Pt-ITj"/>
-                                <exclude reference="VPP-f9-cb7"/>
-                                <exclude reference="5Xy-zi-QRd"/>
-                                <exclude reference="hj2-Tw-tXo"/>
-                                <exclude reference="px7-MC-mYf"/>
-                                <exclude reference="Wuk-zO-J0Z"/>
-                                <exclude reference="0hr-zT-aNG"/>
                                 <exclude reference="ejH-qU-d0L"/>
                                 <exclude reference="gKn-Jc-gAG"/>
                                 <exclude reference="mxg-7X-YcB"/>
+                                <exclude reference="hj2-Tw-tXo"/>
+                                <exclude reference="px7-MC-mYf"/>
+                                <exclude reference="0hr-zT-aNG"/>
+                                <exclude reference="Wuk-zO-J0Z"/>
+                                <exclude reference="9Hy-Pt-ITj"/>
+                                <exclude reference="VPP-f9-cb7"/>
+                                <exclude reference="5Xy-zi-QRd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -224,16 +226,16 @@
                                 <include reference="PVX-Vb-PiC"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="9Hy-Pt-ITj"/>
-                                <include reference="VPP-f9-cb7"/>
-                                <include reference="5Xy-zi-QRd"/>
-                                <include reference="hj2-Tw-tXo"/>
-                                <include reference="px7-MC-mYf"/>
-                                <include reference="Wuk-zO-J0Z"/>
-                                <include reference="0hr-zT-aNG"/>
                                 <include reference="ejH-qU-d0L"/>
                                 <include reference="gKn-Jc-gAG"/>
                                 <include reference="mxg-7X-YcB"/>
+                                <include reference="hj2-Tw-tXo"/>
+                                <include reference="px7-MC-mYf"/>
+                                <include reference="0hr-zT-aNG"/>
+                                <include reference="Wuk-zO-J0Z"/>
+                                <include reference="9Hy-Pt-ITj"/>
+                                <include reference="VPP-f9-cb7"/>
+                                <include reference="5Xy-zi-QRd"/>
                             </mask>
                         </variation>
                     </view>
